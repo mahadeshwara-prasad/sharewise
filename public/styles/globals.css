@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card-color{
+    background: radial-gradient(at bottom left, rgb(255, 255, 255) 70%, #F6F9FF 30%);
+}
+
+.profile-pic{
+    background-color: black;
+    border-radius: 50%;
+ height: 100px;
+ width: 100px;
+ overflow: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+@media screen and (min-width:480px) {
+    .profile-pic{
+        background-color: black;
+        border-radius: 50%;
+     height: 150px;
+     width: 150px;
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+}
