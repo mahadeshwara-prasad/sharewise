@@ -1,5 +1,5 @@
 
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense} from "react";
 import ProfileCard from "./(components-address)/ProfileCard";
 import RequestList from "./(components-address)/RequestList";
 import { useAccount, useContractRead, useContractReads } from "wagmi";
@@ -13,11 +13,6 @@ export async function generateStaticParams(){
 
 export default function Page({params}){
 
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true)
-      }, [])
 
     const { address } = useAccount() ; 
 
