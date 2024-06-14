@@ -8,7 +8,12 @@ import SendFRequest from "./(components-address)/SendFRequest";
 import TabList from "./(components-body)/TabList";
 
 export async function generateStaticParams(){
-    
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+	const posts = await response.json();
+
+	return posts.map((post) => ({
+		postId: post.id.toString(),
+	}));
 }
 
 export default function Page({params}){
