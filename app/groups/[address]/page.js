@@ -7,6 +7,10 @@ import groupAbi from "../../../ethereum/build/Group.json";
 import SendFRequest from "./(components-address)/SendFRequest";
 import TabList from "./(components-body)/TabList";
 
+export async function generateStaticParams(){
+    
+}
+
 export default function Page({params}){
 
     const [isClient, setIsClient] = useState(false);
