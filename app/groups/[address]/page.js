@@ -1,5 +1,5 @@
 
-import React, { Suspense} from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import ProfileCard from "./(components-address)/ProfileCard";
 import RequestList from "./(components-address)/RequestList";
 import { useAccount, useContractRead, useContractReads } from "wagmi";
@@ -8,10 +8,11 @@ import SendFRequest from "./(components-address)/SendFRequest";
 import TabList from "./(components-body)/TabList";
 
 export async function generateStaticParams(){
-
+    
 }
 
 export default function Page({params}){
+
 
 
     const { address } = useAccount() ; 

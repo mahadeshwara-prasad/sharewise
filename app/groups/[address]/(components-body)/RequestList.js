@@ -1,3 +1,4 @@
+"use client"
 import { Button, Flowbite, Progress, Tooltip } from 'flowbite-react'
 import React, { useState } from 'react'
 import { useAccount, useContractRead, useContractReads, useContractWrite, useWaitForTransaction } from 'wagmi'

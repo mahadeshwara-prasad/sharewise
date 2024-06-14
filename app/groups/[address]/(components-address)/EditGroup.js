@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { Button, Checkbox, FileInput, Label, Modal, TextInput, Textarea } from 'flowbite-react';
 import { useState } from 'react';
 import { useContractWrite, useWaitForTransaction } from 'wagmi';
