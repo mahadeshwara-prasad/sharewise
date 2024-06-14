@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import FriendRequestList from '../(components-address)/FriendRequestList'
 import groupAbi from "../../../../ethereum/build/Group.json"
 import { useAccount, useContractRead, useContractReads, useContractWrite, useWaitForTransaction } from 'wagmi'
 import LoadingRound from "../(components-address)/LoadingRound"
 import Model from '../(components-address)/Model'
-import swal from 'sweetalert'
 import Swal from 'sweetalert2'
 
 function FriendsList(props) {

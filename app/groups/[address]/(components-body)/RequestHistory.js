@@ -1,11 +1,10 @@
-import { Button, Flowbite, Progress, Tooltip } from 'flowbite-react'
-import React, { useState } from 'react'
+import { Flowbite, Progress, Tooltip } from 'flowbite-react'
+import React from 'react'
 import { useContractReads } from 'wagmi'
 import groupAbi from "../../../../ethereum/build/Group.json"
 import moment from "moment";
 import { formatEther } from 'viem';
 import Link from 'next/link';
-import DropDown from './DropDown';
 import Contributors from './Contributors';
 
 
