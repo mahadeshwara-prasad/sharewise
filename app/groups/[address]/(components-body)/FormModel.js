@@ -1,3 +1,4 @@
+"use client"
 import { Button, Label, Modal, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import {Timeline } from 'flowbite-react';
