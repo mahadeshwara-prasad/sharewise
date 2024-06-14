@@ -1,4 +1,4 @@
-"use client"
+
 import React, { Suspense, useEffect, useState } from "react";
 import ProfileCard from "./(components-address)/ProfileCard";
 import RequestList from "./(components-address)/RequestList";
@@ -8,7 +8,7 @@ import SendFRequest from "./(components-address)/SendFRequest";
 import TabList from "./(components-body)/TabList";
 
 export async function generateStaticParams(){
-    
+
 }
 
 export default function Page({params}){
