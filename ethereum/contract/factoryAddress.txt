@@ -11,3 +11,9 @@
 
 
 0xA26cE4725195DA118f71E06E52761229E4cb9439      //Added cancel request, take money back of canceled request, verification of token while approval of request.
+
+
+0xCF37E10C06e6eAaF9CAceD6B340422dcd59634DF     //New Sepolia Contract.
+
+
+0x758D9c126Ad591ad6FEFC1826cf05Cb88Bcd5684      //ERC20 Token Address.

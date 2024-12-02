@@ -87,7 +87,7 @@ contract Group{
         groupName=name;
         groupDescription=description;
         imageUrl=image;
-        token = ERC20(0x5917EaA193F1E5c77eF955fa6b643772d411437a);
+        token = ERC20(0x758D9c126Ad591ad6FEFC1826cf05Cb88Bcd5684);
         friends[owner]=true;
         admin[owner]=true;
         friendReqCheck[owner]=true;

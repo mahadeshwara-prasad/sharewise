@@ -1,5 +1,5 @@
-
-import React, { Suspense} from "react";
+'use client'
+import React, { Suspense, useEffect, useState} from "react";
 import ProfileCard from "./(components-address)/ProfileCard";
 import RequestList from "./(components-address)/RequestList";
 import { useAccount, useContractRead, useContractReads } from "wagmi";
@@ -9,7 +9,11 @@ import TabList from "./(components-body)/TabList";
 
 export default function Page({params}){
 
+    const [isClient, setIsClient] = useState(false);
 
+    useEffect(() => {
+        setIsClient(true)
+      }, [])
 
     const { address } = useAccount() ; 
 

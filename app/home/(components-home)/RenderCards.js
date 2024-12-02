@@ -10,14 +10,14 @@ export default function RenderCards(){
     const [searchField, setSearchField] = useState("");
 
     const getGroupAddress = useContractRead({
-        address: '0xA26cE4725195DA118f71E06E52761229E4cb9439',
+        address: '0xCF37E10C06e6eAaF9CAceD6B340422dcd59634DF',
         abi: factory.abi,
         functionName: 'getDeployedGroupAddress',
         watch: true,
     });
     const getGroupDetails = useContractReads({
         contracts: getGroupAddress?.data?.map((address)=>({
-            address: '0xA26cE4725195DA118f71E06E52761229E4cb9439',
+            address: '0xCF37E10C06e6eAaF9CAceD6B340422dcd59634DF',
             abi: factory.abi,
             functionName: 'groupDetails',
             args: [address],

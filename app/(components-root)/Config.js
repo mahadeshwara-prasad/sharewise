@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import '@rainbow-me/rainbowkit/styles.css';
-import { polygonMumbai } from 'viem/chains';
+import { polygonMumbai, sepolia } from 'viem/chains';
 import { createConfig, configureChains } from 'wagmi'
 import { createPublicClient, http } from 'viem'
 import { publicProvider } from 'wagmi/providers/public'
@@ -17,7 +17,7 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 export default function Config({children}){
       
           const { chains, publicClient} = configureChains(
-              [polygonMumbai],
+              [sepolia],
               [
                 jsonRpcProvider({
                   rpc: (chain) => ({

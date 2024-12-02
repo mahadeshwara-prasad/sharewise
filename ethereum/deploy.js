@@ -6,9 +6,9 @@ const compiledFactory = JSON.parse(
 );
 import {ethers} from "ethers";
 
-const provider = ethers.getDefaultProvider("https://polygon-mumbai.infura.io/v3/52b0e6f5c3c546f0a92fe3adb34f21c4");
+const provider = "Your Provider"
 
-const privatekey = "b0469edacb3ae98808faa40e0aff2943c7e50e04bf4a995b57cc80572aeec83b";
+const privatekey = "Your Private Key";
 
 const wallet = new ethers.Wallet(privatekey,provider);
 

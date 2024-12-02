@@ -6,9 +6,7 @@ import factoryAbi from "../../../../ethereum/build/Factory.json"
 import LoadingRound from '../(components-address)/LoadingRound';
 import Swal from 'sweetalert2';
 import Compressor from 'compressorjs';
-import { create as ipfsHttpClient } from "ipfs-http-client";
-import dotenv from "dotenv";
-dotenv.config({ path: '../../.env' });
+
 
 export default function NewRequestModal(props) {
   const [openModal, setOpenModal] = useState(false);
@@ -17,15 +15,8 @@ export default function NewRequestModal(props) {
   const [photo,setPhoto] = useState();
   const [uploadedImages, setUploadedImages] = useState([]);
   let photoUrl;
-  const projectId = process.env.NEXT_PUBLIC_REACT_APP_PROJECT_ID;
-  const projectSecretKey = process.env.NEXT_PUBLIC_REACT_APP_PROJECT_KEY;
   const authorization = "Basic " + Buffer.from(projectId + ':' + projectSecretKey).toString('base64');
-  const ipfs = ipfsHttpClient({
-    url: "https://infura-ipfs.io:5001/api/v0",
-    headers: {
-      authorization,
-    },
-  });
+
 
   function onCloseModal() {
     setOpenModal(false);
@@ -35,7 +26,7 @@ export default function NewRequestModal(props) {
   }
 
   const editGroup = useContractWrite({
-    address: "0xA26cE4725195DA118f71E06E52761229E4cb9439",
+    address: "0xCF37E10C06e6eAaF9CAceD6B340422dcd59634DF",
     abi: factoryAbi.abi,
     functionName: "updateGroupDetails",
     onError(err){
@@ -121,7 +112,7 @@ export default function NewRequestModal(props) {
                     <img
                         className="w-24 h-24 mb-3 rounded-full shadow-lg"
                         src={photo?URL.createObjectURL(photo):props?.profilePic}
-                        alt="https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ"
+                        alt="https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png"
                     />
                         
                     </div>

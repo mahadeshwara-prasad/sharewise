@@ -1,26 +1,20 @@
 "use client"
 import React, { Suspense, useState } from "react";
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { PhotoIcon} from '@heroicons/react/24/solid'
 import Compressor from 'compressorjs';
-import { create as ipfsHttpClient } from "ipfs-http-client";
-import dotenv from "dotenv";
-dotenv.config({ path: '../../.env' });
 import { useContractWrite, useWaitForTransaction} from 'wagmi'
 import factoryAbi from "../../../../ethereum/build/Factory.json"
 import swal from 'sweetalert';
 
 export default function Form(){
     
-    const projectId = process.env.NEXT_PUBLIC_REACT_APP_PROJECT_ID;
-    const projectSecretKey = process.env.NEXT_PUBLIC_REACT_APP_PROJECT_KEY;
     const authorization = "Basic " + Buffer.from(projectId + ':' + projectSecretKey).toString('base64');
     let photoUrl;
     const [photo,setPhoto] = useState(null);
-    const [uploadedImages, setUploadedImages] = useState([]);
     const [name,setName]=useState("");
     const [description,setDescription]=useState("");
     const createGroup = useContractWrite({
-        address: '0xA26cE4725195DA118f71E06E52761229E4cb9439',
+        address: '0xCF37E10C06e6eAaF9CAceD6B340422dcd59634DF',
         abi: factoryAbi.abi,
         functionName: 'createGroup',
       })
@@ -35,12 +29,6 @@ export default function Form(){
         }
         
       })
-    const ipfs = ipfsHttpClient({
-        url: "https://infura-ipfs.io:5001/api/v0",
-        headers: {
-          authorization,
-        },
-      });
 
       function dataURItoBlob(dataURI) {
         // convert base64 to raw binary data held in a string
@@ -108,7 +96,7 @@ export default function Form(){
             // else{
             //     photoUrl = "https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ";
             // }
-            photoUrl = "https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ";
+            photoUrl = "https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png";
             createGroup.write({
                 args: [name,description,photoUrl],
             })
@@ -123,7 +111,7 @@ export default function Form(){
     return(
         <Suspense>
         
-        <div className="container mx-auto space-y-12">
+        <div className="container px-10">
         <div className="flex flex-row">
             <div className="basis-1/2">
                 <form id="create-group-form" onSubmit={onSubmitHandler}>
@@ -181,8 +169,8 @@ export default function Form(){
                         <div className="mt-2 flex items-center gap-x-3">
                         <img
                             className="w-24 h-24 mb-3 rounded-full shadow-lg"
-                            src={photo?URL.createObjectURL(photo):"https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ"}
-                            alt="https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ"
+                            src={photo?URL.createObjectURL(photo):"https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png"}
+                            alt="https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png"
                         />
                             
                         </div>

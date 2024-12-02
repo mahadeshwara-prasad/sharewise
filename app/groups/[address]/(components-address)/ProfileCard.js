@@ -8,7 +8,7 @@ function ProfileCard(props) {
             <div className='grid grid-cols-2 gap-5 content-center pt-5'>
                 <div className='pl-10 md:pl-20 flex items-center'>
                     <div className='profile-pic'>
-                    <img className="shadow-lg" src={props?.details?.[4]} alt="https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ"/>
+                    <img className="shadow-lg" src={props?.details?.[4]} alt="https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png"/>
                     </div>
                 </div>
                 <div>
