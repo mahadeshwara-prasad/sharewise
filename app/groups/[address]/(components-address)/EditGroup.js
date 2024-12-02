@@ -13,9 +13,7 @@ export default function NewRequestModal(props) {
   const [name, setName] = useState(props?.groupName);
   const [details, setDetails] = useState(props?.groupDesc);
   const [photo,setPhoto] = useState();
-  const [uploadedImages, setUploadedImages] = useState([]);
   let photoUrl;
-  const authorization = "Basic " + Buffer.from(projectId + ':' + projectSecretKey).toString('base64');
 
 
   function onCloseModal() {

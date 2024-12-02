@@ -8,7 +8,6 @@ import swal from 'sweetalert';
 
 export default function Form(){
     
-    const authorization = "Basic " + Buffer.from(projectId + ':' + projectSecretKey).toString('base64');
     let photoUrl;
     const [photo,setPhoto] = useState(null);
     const [name,setName]=useState("");
