@@ -3,60 +3,9 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import Link from 'next/link';
 import Notification from './Notification';
-import { useEffect, useState } from 'react';
-import { useAccount } from 'wagmi';
 
 export default function Nav(){
 
-    const {address} = useAccount();
-    const [verified,setVerified] = useState(false);
-    const fetchData = async () => {
-        if(address){
-            try {
-                const response = await fetch("/api?address="+address);
-                const result = await response.json();
-                setData(result);
-                if(result.length>0){
-                    setVerified(true);
-                }else{
-                    setVerified(false);
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        }
-    };
-
-    const [data, setData] = useState([]);
-
-
-    useEffect(() => {
-        
-        if(verifyUser?.isSuccess){
-            putData();
-            verifyUser?.reset();
-        }
-        fetchData();
-      }, [verifyUser?.isSuccess,address]);
-      //console.log(data);
-      
-      async function putData(){
-        try {
-            const response = await fetch(`/api`,{
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
-                  },
-                body: JSON.stringify({ address: address,messageData: verifyUser?.data}),
-            });
-            const result = await response.json();
-            console.log(result);
-            fetchData();
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-      }
     return(
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
             <div className="container mx-auto flex flex-wrap items-center justify-between mx-auto p-4">
