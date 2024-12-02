@@ -84,22 +84,23 @@ export default function NewRequestModal(props) {
 
   async function handleForm(event){
     event.preventDefault();
-    if(photo){
-      const file = photo;
-      const result = await ipfs.add(file);
+    photoUrl = props?.profilePic;
+  //   if(photo){
+  //     const file = photo;
+  //     const result = await ipfs.add(file);
 
-      setUploadedImages([
-      ...uploadedImages,
-      {
-          cid: result.cid,
-          path: result.path,
-      },
-      ]);
-      photoUrl = `https://sharewise.infura-ipfs.io/ipfs/${result.path}`;
-  }
-  else{
-      photoUrl = props?.profilePic;
-  }
+  //     setUploadedImages([
+  //     ...uploadedImages,
+  //     {
+  //         cid: result.cid,
+  //         path: result.path,
+  //     },
+  //     ]);
+  //     photoUrl = `https://sharewise.infura-ipfs.io/ipfs/${result.path}`;
+  // }
+  // else{
+  //     photoUrl = props?.profilePic;
+  // }
   editGroup.write({
       args: [props?.groupAdd,name,details,photoUrl],
   })
