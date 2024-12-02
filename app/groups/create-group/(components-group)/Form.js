@@ -92,22 +92,23 @@ export default function Form(){
       const onSubmitHandler = async (event) => {
         event.preventDefault();
         try{
-            if(photo){
-                const file = photo;
-                const result = await ipfs.add(file);
+            // if(photo){
+            //     const file = photo;
+            //     const result = await ipfs.add(file);
         
-                setUploadedImages([
-                ...uploadedImages,
-                {
-                    cid: result.cid,
-                    path: result.path,
-                },
-                ]);
-                photoUrl = `https://sharewise.infura-ipfs.io/ipfs/${result.path}`;
-            }
-            else{
-                photoUrl = "https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ";
-            }
+            //     setUploadedImages([
+            //     ...uploadedImages,
+            //     {
+            //         cid: result.cid,
+            //         path: result.path,
+            //     },
+            //     ]);
+            //     photoUrl = `https://sharewise.infura-ipfs.io/ipfs/${result.path}`;
+            // }
+            // else{
+            //     photoUrl = "https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ";
+            // }
+            photoUrl = "https://sharewise.infura-ipfs.io/ipfs/QmVNytr6bn2kiYzDAN6wYthHRh4nBr5D7GpK8VESnY8gNJ";
             createGroup.write({
                 args: [name,description,photoUrl],
             })
